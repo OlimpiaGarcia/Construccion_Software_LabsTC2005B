@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <section>
+    <section class="section">
     <h3>
         Datos de contacto <br>
     </h3>
@@ -31,7 +31,7 @@
     </p>
     </section>
 
-    <section>
+    <section class="section">
         <h1> Mis intereses </h1>
         <table> 
             <tbody> 
@@ -51,148 +51,60 @@
         </table>
     </section>
 
-    <section> 
+    <section class="section">
     <h1> Preguntas del laboratorio:</h1> <br>
     <p>
     <ol>    
-        <li><strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></li>
+        <li><strong>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </strong></li>
         <p>
-            WWW son las siglas de la World Wide Web, que es una colección de páginas. <br>
-            Internet es una red de computadoras que se encuentran alrededor del mundo y están conectadas entre sí. <br>
-            Por lo que la WWW necesita internet para funcionar y sin ella sería muy difícil acceder a la información que se encuentra disponible en internet
+            <strong>!important: </strong> <br>
+            Es una propiedad que indica que cualquier regla a la que sea añadida es precedente sobre las demás reglas. 
+            Es decir, es la máxima prioridad para el elemento y selector con el que se usa y, por lo tanto, permite a los desarrolladores y diseñadores tener un control específico sobre el estilo de partes individuales de la página web. <br>
+            En la mayoría de los casos, eso significa anular el estilo predeterminado para el sitio que está contenido en el css <br>
+            Cada instancia de !Important solo se aplica a la línea específica en la que aparece. De modo que puedes usar la propiedad en algunas partes de un fragmento, pero no en todas. <br>
+            Mi recomendación sería usarla solamente cuando necesitamos destacar algo de nuestra página, (ya sea para cambiarle el tamaño, color, tipo de letra etc.) que no necesariamente se va a repetir, es usarlo para casos especiales
         </p>
-        <li><strong>¿Cuáles son las partes de un URL?</strong></li>
+        <li><strong>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</strong></li>
         <p>
-            URL significa Uniform Resource Locator, es una dirección asignada y específica a cada una de las páginas de la WWW para que sean localizadas fácilmente tanto por el navegador como los usuarios
+            Es importante tener cuidado al poner una imagen de fondo, ya que no puedes infringir derechos de autor, sino que puedes resultar complicado la lectura del contenido de la página, además de interferir con la responsividad.
             <br>
-            Esta compuesta por:<br>
-            <ul>
-                <li>Esquema: es el protocolo de inicio empleado para la transmisión de datos entre ordenadores y la recuperación de la información de internet. En la mayor parte de los casos el esquema se corresponde con: http o https. </li>
-                <li>Host: normalmente, para el protocolo http, el host es: www. </li>
-                <li>Dominio: corresponde con el nombre del dominio de cada sitio web, como: edix.com.</li>
-                <li>Puerto: define el nombre del puerto según el host. Para el protocolo http, el puerto por defecto es 80, pero esta parte suele omitirse.</li>
-                <li>Nombre de archivo: define más detalladamente las características del documento: videos-gratis. (Edix, 2022)</li>
-            </ul>
+            Es necesario cuidar aspectos como la calidad de la imagen y como las diferentes pantallas afectan esta, escoger una imagen lo suficientemente grande para que se adapte a distintos tamaños, y la posición de la imagen en el fondo.
         </p>
-        <li><strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></li>
+        <li><strong>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</strong></li>
         <p>
             <ul>
-                <li>PUT: Actualizar o insertar un recurso proporcionando el ID exclusivo del recurso</li>
-                <li>POST: Actualizar o insertar un recurso</li>
-                <li>DELETE: Solicita que se borre el recurso, requiere el ID exclusivo del mismo</li>
-                <li>GET: Solicita información o recurso en especifico</li>
-                <li>HEAD: Recibe el titulo de la página que se solicita</li>
-                <li>POST: Se usa para enviar datos al servidor</li>
-                <li>PATCH: Actualiza parcialmente el recurso. </li>
+                <li>%: La unidad de medida porcentual es la que se usa por defecto en los elementos HTML en donde de manera predeterminada cada elemento de bloque usa un ancho del 100%, es por eso que cuando achicamos la ventana del navegador con una página que no tenga estilos, la página se adapta, ya que siempre usará el ancho total visible. Siempre se establecen en relación con otro valor. </li>
+                <br>Es una medida relativa que puede y debe usarse para asegurar la responsividad<br>
+                <br>
+                <li>Px: Al usar pixeles para definir las dimensiones de los objetos y los estilos de fuente no solo estamos definiendo tamaños rígidos, sino que también estamos ignorando las configuraciones que cada usuario pueda tener en su navegador.</li>
+                <br>Es una medida absoluta que de preferencia, solo debería usarse para imágenes.<br>
+                <br>
+                <li>Pt: Esta medida se usa generalmente en propiedades relacionadas con la fuente de su proyecto. Su abreviatura está marcada con pt. Se espera que esta medida se utilice en hojas de estilo para impresiones, cuando necesite estar seguro del tamaño de fuente utilizado. ¡No se recomienda para la estilización en pantalla!</li>
+                <br>Es una medida que no debería utilizarse a menos que se esté preparando una vista en especifico de impresión.<br>
+                <br>                
             </ul>
         </p>
-        <li><strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></li>
+        <li><strong>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</strong></li>
         <p>
-            POST, ya que se usa para enviar datos al servidor
+            Los archivos CSS y JavaScript tienen mucho espacio vacío, lo que los hace más fáciles de leer para los humanos. Cuando se minifica el código, elimina todo ese espacio vacío. Esto hace que el archivo sea más pequeño y puede ayudarlos a cargar más rápido.    
         </p>
-        <li><strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></li>
-        <p>
-            GET, ya que solicita esa URL en especifico
-        </p>
-        <li><strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></li>
-        <p>
-            Es una respuesta satisfactoria
-        </p>
-        <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></li>
-        <p>
-            El error 404 significa que no se encontró el contenido solicitado. No es responsabilidad del desarrollador, ya que significa que o no existe, se typeo mal o se ha cambiado la liga de la pagina
-        </p>
-        <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></li>
-        <p>
-            Sí, porque es un error del servidor lo cual compete al desarrollador.
-        </p>
-        <li><strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></li>
-        <p>
-            Que debido a las nuevas tecnologías ha quedado desactualizado y por ende son anticuados
-        </p>
-        <li><strong>Menciona algunos elementos de HTML4 que en HTML5 estén desaprobados </strong></li>
-        <p>
-            <ul>
-                <li>big</li>
-                <li>center</li>
-                <li>font</li>
-                <li>dir</li>
-                <li>frame</li>
-            </ul>
-        </p>
-        <li><strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></li>
-        <p>
-            <ul>
-                <li>Mayor compatibilidad</li>
-                <li>Soporte multimedia</li>
-                <li>Mejor rendimiento y soporte móvil</li>
-                <li>Mejores controles de formularios</li>
-            </ul>
-        </p>
-        <li><strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong></li>
-        <p>
-            <ul>
-                <li>caption: Provee un título para la tabla.</li>
-                <li>colgroup: agrupa columnas temáticamente.</li>
-                <li>col: aplica atributos comunes y estilos a una o más columnas. Sólo puede ser declarado como hijo de colgroup.</li>
-                <li>tbody: representa a un cuerpo de la tabla.</li>
-                <li>thead: representa la sección de encabezado de la tabla.</li>
-                <li>tfoot: representa la sección de pie de la tabla.</li>
-                <li>tr: representa una fila. Puede ser declarado como hijo de tbody, thead, tfoot o table.</li>
-                <li>td: representa a una celda regular. Sólo puede ser declarado como hijo de tr.</li>
-                <li>th: representa a una celda de encabezado. Sólo puede ser declarado como hijo de tr.</li>
-            </ul>
-        </p>
-        <li><strong>¿Cuáles son los principales controles de una forma HTML5?</strong></li>
-        <p>
-            Button, checkbox, file, image, password, submit, text.
-        </p>
-        <li><strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</strong></li>
-        <p>
-            466 de 555 puntos. Mozilla Firefox        
-        </p>
-        <li><strong>Sobre el ciclo de vida y desarrollo de los sistemas de información:</strong></li>
-            <dl><strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong></dl>
-            <p>
-                Un modelo de ciclo de vida de software es una vista de las actividades que ocurren durante el desarrollo de software.
-                Intenta determinar el orden de las etapas involucradas y los criterios de transición asociadas entre estas etapas. <br>
-                Un modelo de ciclo de vida del software: <br>
-                <ol>
-                    <li>Describe las fases principales de desarrollo de software.</li>
-                    <li>Define las fases primarias esperadas de ser ejecutadas durante esas fases.</li>
-                    <li>Ayuda a administrar el progreso del desarrollo, y</li>
-                    <li>Provee un espacio de trabajo para la definición de un detallado proceso de desarrollo de software.</li>
-                </ol>
-                (Canepa & Garcia, s. f.)
-
-            </p>
-            <dl><strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></dl>
-            <p>
-                <img src="SDLC_BWC.png" width="260px" alt="Software Development Life Cycle">
-                (Bwc, 2020)
-            </p>
     </p>   
     </ol>
     </section>
 
-    <section> 
-        <h1> Bibliografías:</h1> <br>
+    <section class="section">
+        <h1> Bibliografías:</h1> 
         <p>
             <ol>
-                <li>Anyelguti. (s. f.). Elementos eliminados en HTML5. <a href= "https://aprende-web.net/NT/html5/html5_6.php">https://aprende-web.net/NT/html5/html5_6.php</a></li>
-                <li>Barron, B. (2021, 8 abril). HTML vs HTML5: Conoce las diferencias cruciales entre ellos. Kinsta®. <a href= " https://kinsta.com/es/blog/html-vs-html5/">https://kinsta.com/es/blog/html-vs-html5/</a></li>
-                <li>BBC News Mundo. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). <a href= "BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812">BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</a></li>
-                <li>Bwc, A. (2020, 18 febrero). Software Development Life Cycle (SDLC). Big water Consulting. <a href= "https://bigwater.consulting/2019/04/08/software-development-life-cycle-sdlc/">https://bigwater.consulting/2019/04/08/software-development-life-cycle-sdlc/ </a></li>
+                <li>Aguilera G., F. (2017, 13 junio). Unidades de medida en CSS (Px, Porcentajes, Em y Rem). Francisco Aguilera G <a href= "https://franciscoamk.com/unidades-de-medida-en-css/">https://franciscoamk.com/unidades-de-medida-en-css/</a></li>
+                <li>Alura Latam. (2020, 24 octubre). Guía de Unidades en el CSS. Alura. <a href= " https://www.aluracursos.com/blog/guia-de-unidades-en-css">https://www.aluracursos.com/blog/guia-de-unidades-en-css</a></li>
+                <li>Alvarez, M. (2010, 25 enero). Declaración!important en CSS. Desarrollo Web.  <a href= "https://desarrolloweb.com/articulos/1384.php">https://desarrolloweb.com/articulos/1384.php</a></li>
+                <li>Alvarez, M. (2021, 27 diciembre). Fondos de imagen en HTML. Desarrollo Web <a href= "https://desarrolloweb.com/articulos/1384.php">https://desarrolloweb.com/articulos/1384.php </a></li>
                 <li>Canepa, A., & Garcia. (s. f.). Repositorio Institucional de Ciencia Abierta - RUNACAR: Invalid Identifier. UNACAR. Recuperado 14 de febrero de 2023, de <a href= "http://www.repositorio.unacar.mx/jspui/bitstream/1030620191/199/1/acalan+74-2.pdf">http://www.repositorio.unacar.mx/jspui/bitstream/1030620191/199/1/acalan+74-2.pdf</a></li>
-                <li>Códigos de estado de respuesta HTTP - HTTP | MDN. (2022, 26 noviembre). <a href= "https://developer.mozilla.org/es/docs/Web/HTTP/Status">https://developer.mozilla.org/es/docs/Web/HTTP/Status </a></li>
-                <li>Conformidad: requisitos y recomendaciones. (s. f.). <a href="http://html.conclase.net/w3c/html401-es/conform.html">http://html.conclase.net/w3c/html401-es/conform.html </a> </li>
-                <li>De León, D. P. (s. f.). Elemento table. <a href= "https://www.htmlquick.com/es/reference/tags/table.html"></a>https://www.htmlquick.com/es/reference/tags/table.html </li>
-                <li>Edix, R. (2022, 11 julio). ¿Qué es una URL? Aquí te lo contamos. Edix España. <a href= " https://www.edix.com/es/instituto/que-es-url/">https://www.edix.com/es/instituto/que-es-url/</a></li>
-                <li>Formularios en HTML5 - Aprende sobre desarrollo web | MDN. (2022, 30 noviembre). <a href= "https://developer.mozilla.org/es/docs/Learn/Forms">https://developer.mozilla.org/es/docs/Learn/Forms </a> </li>
-                <li>Google. (s. f.). Errores 404 (Page Not Found) de página no encontrada. Ayuda Search Console. Recuperado 14 de febrero de 2023, de <a href= "https://support.google.com/webmasters/answer/2445990?hl=es">https://support.google.com/webmasters/answer/2445990?hl=es</a></li>
-                <li>IBM. (s. f.). Métodos PUT, POST y DELETE. © Copyright IBM Corp. 2018. <a href="https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods">https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods</a></li>
-                <li>Kinsta. (2022, 19 diciembre). ¿Qué es una Petición HTTP? Kinsta®. <a href= "https://kinsta.com/es/base-de-conocimiento/que-es-una-peticion-http/">https://kinsta.com/es/base-de-conocimiento/que-es-una-peticion-http/</a></li>
-                <li>Martinekuan. (2023, 18 enero). Procedimientos recomendados para el diseño de API web - Azure Architecture Center. Microsoft Learn. <a href= "https://learn.microsoft.com/es-es/azure/architecture/best-practices/api-design">https://learn.microsoft.com/es-es/azure/architecture/best-practices/api-design</a></li>
+                <li>M, J. (2022, 30 septiembre). !Important: ¿Qué es y cuándo usarlo? UXDIVI.  <a href= "https://uxdivi.com/blog/important-que-es-y-cuando-usarlo">https://uxdivi.com/blog/important-que-es-y-cuando-usarlo</a></li>
+                <li>Security check. (s. f.). Razones comunes para el bajo rendimiento de los sitios web <a href="https://help.dreamhost.com/hc/es/articles/216349808-Razones-comunes-para-el-bajo-rendimiento-de-los-sitios-web">https://help.dreamhost.com/hc/es/articles/216349808-Razones-comunes-para-el-bajo-rendimiento-de-los-sitios-web</a> </li>
+                <li>Valores y unidades CSS | MDN. (2022, 30 noviembre).  <a href= "https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units">https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units</a></li>
+                <li>Web Design in 4 minutes. (s. f.). <a href= "https://jgthms.com/web-design-in-4-minutes/">https://jgthms.com/web-design-in-4-minutes/</a></li>
             </ol>
         </p>    
     </section>
