@@ -1,210 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi pagina web</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <section>
-    <h3>
-        Datos de contacto <br>
-    </h3>
-    <p>
-        Olimpia Helena García Huerta <br>
-        A01708462<br>
-        <a href="A01708462@tec.mx"> a01708462@tec.mx</a> <br> 
-    </p>
+<html>
+    <head>
+        <title>Hot cakes</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+              </a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+          
+                <a class="navbar-item">
+                  Documentation
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More
+                  </a>
+          
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      About
+                    </a>
+                    <a class="navbar-item">
+                      Jobs
+                    </a>
+                    <a class="navbar-item">
+                      Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
 
-    <h1>
-        Sobre mi:   <br> 
-    </h1>
-    <p>
-        Je m'appelle Olimpia je suis mexicaine, j'ai 22 ans, je suis Au Pair de 2 filles âgées de 6 et 11 ans et un
-        garçon de 13 ans á Paris.<br>
-        Je suis une jeune femme qu'aime les enfants, apprendre de autres cultures et
-        connaître des personnes. Garder des enfants est un <br> 
-        travail qui me plaît vraiment et
-        m'aide à devenir un meilleur personne.<br>
-    </p>
-    </section>
+        <main class="container">
+              
+            <h1 class="title">Hot cakes</h1>
+            <h2 class="subtitle">Receta</h2>
 
-    <section>
-        <h1> Mis intereses </h1>
-        <table> 
-            <tbody> 
-                <tr> 
-                    <img src="libros.png" width="260px" alt="libros young adult">
-                </tr>
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="color: blueviolet;">Cantidad</td>
+                        <td class="ingrediente">Ingrediente</td>
+                    </tr>
+                    <tr>
+                        <td>5 cucharadas</td>
+                        <td id="harina">Harina</td>
+                    </tr>
+                    <tr>
+                        <td>250ml</td>
+                        <td>Leche</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>huevos</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+                <thead>
+                    <tr>
+                        <th>Receta para hacer hotcakes</th>
+                    </tr>
+                </thead>
+                
+            </table>
 
-                <tr>
-                    <img src="taylor.jpg" width="260px" alt="taylor swift">
-                </tr>
+            <button id="contador_clicks" class="button is-primary"></button>
+            <div id="clicks">0</div>
 
-                <tr> 
-                    <img src="series.png" width="260px" alt="series">
-                </tr>
+            <div class="columns">
+                <div class="column">
+                  First column
+                </div>
+                <div class="column">
+                  Second column
+                </div>
+                <div class="column">
+                  Third column
+                </div>
+                <div class="column">
+                  Fourth column
+                </div>
+              </div>
 
-            </tbody>
-        </table>
-    </section>
 
-    <section> 
-    <h1> Preguntas del laboratorio:</h1> <br>
-    <p>
-    <ol>    
-        <li><strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong></li>
-        <p>
-            WWW son las siglas de la World Wide Web, que es una colección de páginas. <br>
-            Internet es una red de computadoras que se encuentran alrededor del mundo y están conectadas entre sí. <br>
-            Por lo que la WWW necesita internet para funcionar y sin ella sería muy difícil acceder a la información que se encuentra disponible en internet
-        </p>
-        <li><strong>¿Cuáles son las partes de un URL?</strong></li>
-        <p>
-            URL significa Uniform Resource Locator, es una dirección asignada y específica a cada una de las páginas de la WWW para que sean localizadas fácilmente tanto por el navegador como los usuarios
-            <br>
-            Esta compuesta por:<br>
-            <ul>
-                <li>Esquema: es el protocolo de inicio empleado para la transmisión de datos entre ordenadores y la recuperación de la información de internet. En la mayor parte de los casos el esquema se corresponde con: http o https. </li>
-                <li>Host: normalmente, para el protocolo http, el host es: www. </li>
-                <li>Dominio: corresponde con el nombre del dominio de cada sitio web, como: edix.com.</li>
-                <li>Puerto: define el nombre del puerto según el host. Para el protocolo http, el puerto por defecto es 80, pero esta parte suele omitirse.</li>
-                <li>Nombre de archivo: define más detalladamente las características del documento: videos-gratis. (Edix, 2022)</li>
-            </ul>
-        </p>
-        <li><strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong></li>
-        <p>
-            <ul>
-                <li>PUT: Actualizar o insertar un recurso proporcionando el ID exclusivo del recurso</li>
-                <li>POST: Actualizar o insertar un recurso</li>
-                <li>DELETE: Solicita que se borre el recurso, requiere el ID exclusivo del mismo</li>
-                <li>GET: Solicita información o recurso en especifico</li>
-                <li>HEAD: Recibe el titulo de la página que se solicita</li>
-                <li>POST: Se usa para enviar datos al servidor</li>
-                <li>PATCH: Actualiza parcialmente el recurso. </li>
-            </ul>
-        </p>
-        <li><strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong></li>
-        <p>
-            POST, ya que se usa para enviar datos al servidor
-        </p>
-        <li><strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong></li>
-        <p>
-            GET, ya que solicita esa URL en especifico
-        </p>
-        <li><strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong></li>
-        <p>
-            Es una respuesta satisfactoria
-        </p>
-        <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong></li>
-        <p>
-            El error 404 significa que no se encontró el contenido solicitado. No es responsabilidad del desarrollador, ya que significa que o no existe, se typeo mal o se ha cambiado la liga de la pagina
-        </p>
-        <li><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong></li>
-        <p>
-            Sí, porque es un error del servidor lo cual compete al desarrollador.
-        </p>
-        <li><strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong></li>
-        <p>
-            Que debido a las nuevas tecnologías ha quedado desactualizado y por ende son anticuados
-        </p>
-        <li><strong>Menciona algunos elementos de HTML4 que en HTML5 estén desaprobados </strong></li>
-        <p>
-            <ul>
-                <li>big</li>
-                <li>center</li>
-                <li>font</li>
-                <li>dir</li>
-                <li>frame</li>
-            </ul>
-        </p>
-        <li><strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong></li>
-        <p>
-            <ul>
-                <li>Mayor compatibilidad</li>
-                <li>Soporte multimedia</li>
-                <li>Mejor rendimiento y soporte móvil</li>
-                <li>Mejores controles de formularios</li>
-            </ul>
-        </p>
-        <li><strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong></li>
-        <p>
-            <ul>
-                <li>caption: Provee un título para la tabla.</li>
-                <li>colgroup: agrupa columnas temáticamente.</li>
-                <li>col: aplica atributos comunes y estilos a una o más columnas. Sólo puede ser declarado como hijo de colgroup.</li>
-                <li>tbody: representa a un cuerpo de la tabla.</li>
-                <li>thead: representa la sección de encabezado de la tabla.</li>
-                <li>tfoot: representa la sección de pie de la tabla.</li>
-                <li>tr: representa una fila. Puede ser declarado como hijo de tbody, thead, tfoot o table.</li>
-                <li>td: representa a una celda regular. Sólo puede ser declarado como hijo de tr.</li>
-                <li>th: representa a una celda de encabezado. Sólo puede ser declarado como hijo de tr.</li>
-            </ul>
-        </p>
-        <li><strong>¿Cuáles son los principales controles de una forma HTML5?</strong></li>
-        <p>
-            Button, checkbox, file, image, password, submit, text.
-        </p>
-        <li><strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</strong></li>
-        <p>
-            466 de 555 puntos. Mozilla Firefox        
-        </p>
-        <li><strong>Sobre el ciclo de vida y desarrollo de los sistemas de información:</strong></li>
-            <dl><strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong></dl>
-            <p>
-                Un modelo de ciclo de vida de software es una vista de las actividades que ocurren durante el desarrollo de software.
-                Intenta determinar el orden de las etapas involucradas y los criterios de transición asociadas entre estas etapas. <br>
-                Un modelo de ciclo de vida del software: <br>
-                <ol>
-                    <li>Describe las fases principales de desarrollo de software.</li>
-                    <li>Define las fases primarias esperadas de ser ejecutadas durante esas fases.</li>
-                    <li>Ayuda a administrar el progreso del desarrollo, y</li>
-                    <li>Provee un espacio de trabajo para la definición de un detallado proceso de desarrollo de software.</li>
-                </ol>
-                (Canepa & Garcia, s. f.)
+        </main>
 
-            </p>
-            <dl><strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong></dl>
-            <p>
-                <img src="SDLC_BWC.png" width="260px" alt="Software Development Life Cycle">
-                (Bwc, 2020)
-            </p>
-    </p>   
-    </ol>
-    </section>
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+              </p>
+            </div>
+          </footer>
 
-    <section> 
-        <h1> Bibliografías:</h1> <br>
-        <p>
-            <ol>
-                <li>Anyelguti. (s. f.). Elementos eliminados en HTML5. <a href= "https://aprende-web.net/NT/html5/html5_6.php">https://aprende-web.net/NT/html5/html5_6.php</a></li>
-                <li>Barron, B. (2021, 8 abril). HTML vs HTML5: Conoce las diferencias cruciales entre ellos. Kinsta®. <a href= " https://kinsta.com/es/blog/html-vs-html5/">https://kinsta.com/es/blog/html-vs-html5/</a></li>
-                <li>BBC News Mundo. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). <a href= "BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812">BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</a></li>
-                <li>Bwc, A. (2020, 18 febrero). Software Development Life Cycle (SDLC). Big water Consulting. <a href= "https://bigwater.consulting/2019/04/08/software-development-life-cycle-sdlc/">https://bigwater.consulting/2019/04/08/software-development-life-cycle-sdlc/ </a></li>
-                <li>Canepa, A., & Garcia. (s. f.). Repositorio Institucional de Ciencia Abierta - RUNACAR: Invalid Identifier. UNACAR. Recuperado 14 de febrero de 2023, de <a href= "http://www.repositorio.unacar.mx/jspui/bitstream/1030620191/199/1/acalan+74-2.pdf">http://www.repositorio.unacar.mx/jspui/bitstream/1030620191/199/1/acalan+74-2.pdf</a></li>
-                <li>Códigos de estado de respuesta HTTP - HTTP | MDN. (2022, 26 noviembre). <a href= "https://developer.mozilla.org/es/docs/Web/HTTP/Status">https://developer.mozilla.org/es/docs/Web/HTTP/Status </a></li>
-                <li>Conformidad: requisitos y recomendaciones. (s. f.). <a href="http://html.conclase.net/w3c/html401-es/conform.html">http://html.conclase.net/w3c/html401-es/conform.html </a> </li>
-                <li>De León, D. P. (s. f.). Elemento table. <a href= "https://www.htmlquick.com/es/reference/tags/table.html"></a>https://www.htmlquick.com/es/reference/tags/table.html </li>
-                <li>Edix, R. (2022, 11 julio). ¿Qué es una URL? Aquí te lo contamos. Edix España. <a href= " https://www.edix.com/es/instituto/que-es-url/">https://www.edix.com/es/instituto/que-es-url/</a></li>
-                <li>Formularios en HTML5 - Aprende sobre desarrollo web | MDN. (2022, 30 noviembre). <a href= "https://developer.mozilla.org/es/docs/Learn/Forms">https://developer.mozilla.org/es/docs/Learn/Forms </a> </li>
-                <li>Google. (s. f.). Errores 404 (Page Not Found) de página no encontrada. Ayuda Search Console. Recuperado 14 de febrero de 2023, de <a href= "https://support.google.com/webmasters/answer/2445990?hl=es">https://support.google.com/webmasters/answer/2445990?hl=es</a></li>
-                <li>IBM. (s. f.). Métodos PUT, POST y DELETE. © Copyright IBM Corp. 2018. <a href="https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods">https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods</a></li>
-                <li>Kinsta. (2022, 19 diciembre). ¿Qué es una Petición HTTP? Kinsta®. <a href= "https://kinsta.com/es/base-de-conocimiento/que-es-una-peticion-http/">https://kinsta.com/es/base-de-conocimiento/que-es-una-peticion-http/</a></li>
-                <li>Martinekuan. (2023, 18 enero). Procedimientos recomendados para el diseño de API web - Azure Architecture Center. Microsoft Learn. <a href= "https://learn.microsoft.com/es-es/azure/architecture/best-practices/api-design">https://learn.microsoft.com/es-es/azure/architecture/best-practices/api-design</a></li>
-            </ol>
-        </p>    
-    </section>
-
-    <footer>
-        <strong>Elementos usados <br></strong>
-        <p>
-            <a href= "https://code.visualstudio.com/"> Visual Studio Code </a>
-        </p>
-    </footer>
-<script src="js.js"></script>
-<button id = "contador_clicks"> </button>
-<div id = "clicks"> </div>
-</body>
+        <script src="js.js"></script>
+    </body>
 </html>

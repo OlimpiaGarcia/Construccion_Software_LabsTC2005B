@@ -57,9 +57,10 @@ let boton = document.getElementById("contador de clicks");
 boton.innerHTML =  "cuenta clicks";
 boton.onclick = () =>  //funcion anonima
 {
-    contaodr_clicks++;
-    console.log(contaodr_clicks);
-    document.getElementById("clicks").innerHTML = contaodr_clicks;
+    let contador_clicks = Number(document.getElementById("clicks").innerHTML);
+    contador_clicks++;
+    console.log(contador_clicks);
+    document.getElementById("clicks").innerHTML = contador_clicks;
 }
 
 //arreglo
@@ -91,6 +92,7 @@ let objeto =
 }
 
 objeto.atributo_3 = arreglo;
+
 console.log(objeto);
 console.log(objeto.atributo_1);
 
