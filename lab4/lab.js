@@ -24,3 +24,8 @@
 */
 
 
+const tabla = ( ) => {
+    let numero = prompt("Ingresa un numero");
+    let tabla = document.getElementById ("tabla")
+}
+
