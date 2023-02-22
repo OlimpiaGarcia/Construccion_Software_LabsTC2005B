@@ -24,8 +24,19 @@
 */
 
 
-const tabla = ( ) => {
+const tabla = ( ) => 
+{
     let numero = prompt("Ingresa un numero");
     let tabla = document.getElementById ("tabla")
+
+    for (let i = 1; i <= numero; i++)
+
+        console.log(i * i);
+    
+    for (let i = 1; i <= numero; i++)
+        console.log(i*i*i);
+    
 }
+
+
 
