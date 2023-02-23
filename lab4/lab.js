@@ -74,4 +74,9 @@ function suma()
     document.getElementById("sumatoria").innerHTML = sumatoria;
 }
 
+function contador()
+{
+    let entrada = [prompt ]
+}
+
 
