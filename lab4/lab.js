@@ -23,9 +23,7 @@
     constructor deben tener al menos 2 métodos. Muestra los resultados en el documento HTML.
 */
 
-
-
-
+//
 function Tabla()
 {
     let numero = window.prompt("Ingresa un numero");
@@ -47,6 +45,33 @@ function Tabla()
     tabla += "</table>";
 
     document.getElementById("table").innerHTML = tabla;
+}
+
+function suma()
+{
+    let numero_1 = Math.floor(Math.random() * 100 );
+    let nuemro_2 = Math.floor(Math.random() * 100 );
+
+    let resultado = numero_1 + nuemro_2;
+
+    inicio = Date.now()
+    let respuesta = prompt ("Ingresa la respuesta a la suma de " + numero_1 + "+" + nuemro_2)
+    fin = Date.now()
+
+    let tiempo = (fin - inicio) / 1000;
+
+    let sumatoria
+
+    if (respuesta != resultado)
+    {
+        sumatoria = ("La respuesta es incorrecta."  + "   Tiempo de ejecución: " + " " + tiempo + " segundos")
+    }
+    else 
+    {
+        sumatoria = ("La respuesta es correcta. "  + "    Tiempo de ejecución: " + " " + tiempo + " segundos" )
+    }
+
+    document.getElementById("sumatoria").innerHTML = sumatoria;
 }
 
 
