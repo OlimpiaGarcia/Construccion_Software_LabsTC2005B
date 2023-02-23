@@ -24,19 +24,29 @@
 */
 
 
-const tabla = ( ) => 
+
+
+function Tabla()
 {
-    let numero = prompt("Ingresa un numero");
-    let tabla = document.getElementById ("tabla")
+    let numero = window.prompt("Ingresa un numero");
+    let tabla
 
+    tabla += "<table><tr><th>Original</th><th>Cuadrado</th><th>Cubo</th></tr>";
+    
+    let cuadrado
+    let cubo
     for (let i = 1; i <= numero; i++)
+    {
+        cuadrado = ( i* i);
+        console.log(cuadrado);
+        cubo = (i * i * i);
+        console.log(cubo);
+        tabla += `<tr><td>${i}</td><td>${cuadrado}</td><td>${cubo}</td></tr>`;
+    }
+    
+    tabla += "</table>";
 
-        console.log(i * i);
-    
-    for (let i = 1; i <= numero; i++)
-        console.log(i*i*i);
-    
+    document.getElementById("table").innerHTML = tabla;
 }
-
 
 
