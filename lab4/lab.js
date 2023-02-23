@@ -76,7 +76,8 @@ function suma()
 
 function contador()
 {
-    let entrada = [prompt ]
+    let entrada = prompt("ingresa la lista de numeros " + [])
+    
 }
 
 
