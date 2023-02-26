@@ -9,7 +9,7 @@ filesystem.writeFileSync ("hola.txt", "Hola desde node");
 
 //write file vs write file sync = accede a diferentes localidades de memoria
 */
-
+/*
 const { writeFileSync } = require("fs");
 const http = require ("http");
 const { text } = require("stream/consumers");
@@ -25,7 +25,7 @@ const server = http.createServer( (request, response)  =>
 });
 
 server.listen(3000);
-
+*/
 
 
 // Una función que reciba un arreglo de números y devuelva su promedio.
@@ -48,11 +48,45 @@ array()
 
 function string()
 {
-    write_text = (text);
-    content =  filesys = require("fs");
-    filesys.writeFileSync("texto.txt", text)
+    const filesystem = require('fs');
+    filesystem.writeFileSync("texto.txt", "Yuna Chung y Olimpia García")
 }
 
 string()
 // Escoge algún problema que hayas implementado en otro lenguaje de programación, y dale una solución en js que se ejecute sobre node. 
+const multable = () => {
+    const readline = require("readline");
+    const rl = readline.createInterface({
+        input : process.stdin,
+        output : process.stdout
+    });
 
+    let input;
+
+    rl.on("line", function(line){
+        input = line;
+        rl.close();
+    }).on("close", function(){
+        for(let i=1; i<10; i++){
+            console.log(`${input} * ${i} = ${input*i}`);
+        }
+        process.exit();
+    })
+};
+
+multable();
+
+
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((request, response) => {
+    console.log(request.url);
+    fs.readFile('./index.html', function(err, data){
+        response.setHeader("Content-Type", "text/html");
+        response.write(data);
+        response.end();
+    });
+});
+
+server.listen(3000);
