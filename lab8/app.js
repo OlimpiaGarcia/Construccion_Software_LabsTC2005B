@@ -10,7 +10,9 @@ filesystem.writeFileSync ("hola.txt", "Hola desde node");
 //write file vs write file sync = accede a diferentes localidades de memoria
 */
 
+const { writeFileSync } = require("fs");
 const http = require ("http");
+const { text } = require("stream/consumers");
 
 const server = http.createServer( (request, response)  =>
 {
@@ -46,8 +48,11 @@ array()
 
 function string()
 {
-    
+    write_text = (text);
+    content =  filesys = require("fs");
+    filesys.writeFileSync("texto.txt", text)
 }
 
+string()
 // Escoge algún problema que hayas implementado en otro lenguaje de programación, y dale una solución en js que se ejecute sobre node. 
 
