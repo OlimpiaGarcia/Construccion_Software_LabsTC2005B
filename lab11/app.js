@@ -19,6 +19,7 @@ const app = express();   //esto crea el servidor
 //body parser
 
 const bodyParser = require('body-parser');
+const { request, response } = require('express');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -79,7 +80,8 @@ app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
 
-app.use("/pedir", (request, response, next) => 
+//app.use("/pedir", (request, response, next) =>  esto funciona para post y get
+app.get("/pedir", (request, response, next) => 
 {
 
     console.log (request.body);
@@ -147,6 +149,12 @@ app.use("/pedir", (request, response, next) =>
 
 });
 
+app.post("/pedir", (request, response, next) => 
+{
+    console.log(request.body);
+
+    response.send("Pediste " + request.body.hot_cakes + "hot cakes")
+})
 
 
 app.use((request, response, next) => {
