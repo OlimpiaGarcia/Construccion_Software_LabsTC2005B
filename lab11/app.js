@@ -15,6 +15,14 @@ console.log("Hola desde npm")
 const express = require('express');
 const app = express();   //esto crea el servidor
 
+//-----------------------------------------------------------
+//geters y setters
+//configura ejs
+
+app.set("view engine", "ejs");
+app.set("views", "views");
+
+
 //---------------------------------------------------------
 //carpeta estatica
 
