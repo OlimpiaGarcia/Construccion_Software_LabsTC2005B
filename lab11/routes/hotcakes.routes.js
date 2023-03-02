@@ -1,5 +1,6 @@
 // en este archivo esta la logica de la pagina 
 
+const { request } = require('express');
 const express = require('express');
 
 const router = express.Router();
@@ -79,6 +80,11 @@ router.post("/pedir", (request, response, next) =>
 
     response.send("Pediste " + request.body.hot_cakes + "  hot cakes")
 })
+
+router.get("/pedido", (request, response, next) =>
+{
+    response.sendFile(path.join(__dirname, '..', 'views', 'el-archivo.html'));
+});
 
 
 module.exports = router; //exportar la ruta
