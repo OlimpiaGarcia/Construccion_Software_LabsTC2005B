@@ -22,6 +22,8 @@ const app = express();   //esto crea el servidor
 app.set("view engine", "ejs");
 app.set("views", "views");
 
+//todo lo que pongammos con % se eecuta en el servidor
+//response render compila el archivo ejs
 
 //---------------------------------------------------------
 //carpeta estatica
