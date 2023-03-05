@@ -77,18 +77,8 @@ router.post("/pedir", (request, response, next) =>
 {
     console.log(request.body);
 
-    
-    const texto = request.body.hot_cakes;
-
-    response.send("Pediste " + texto + "  hot cakes")
-
-    const respuesta = "pediste " + texto +" hot cakes "
-
-    ///aqui debe ir lo del txt
-    const filesystem = require("fs");
-    filesystem.writeFileSync('pediste.txt',respuesta)            
+    response.send("Pediste " + request.body.hot_cakes + "  hot cakes")
 })
-
 
 
 module.exports = router; //exportar la ruta

@@ -80,7 +80,7 @@ app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
 
-const hotcakesRutas = require("./routes/hotcakes.routes.js");
+const hotcakesRutas = require("./routes/hotcakes.routes");
 
 app.use("/lab11", hotcakesRutas);
 
