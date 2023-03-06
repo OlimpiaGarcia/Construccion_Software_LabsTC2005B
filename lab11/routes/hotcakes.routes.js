@@ -3,22 +3,7 @@
 const { request, response } = require('express');
 const express = require('express');
 
-const hot_cakes = [
-    "belgas",
-    "avena",
-    "japoneses",
-    "chocolates",
-    "salados",
-    "americanos",
-    "platanos",
-    "minis"
-];
-
 const router = express.Router();
-router.get("/lista", (request, response, next)=> 
-{
-    response.render("lista", {hot_cakes: hot_cakes});
-})
 
 //app.use("/pedir", (request, response, next) =>  esto funciona para post y get
 router.get("/pedir", (request, response, next) => 
