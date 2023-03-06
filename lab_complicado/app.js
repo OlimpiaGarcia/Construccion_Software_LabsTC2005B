@@ -15,24 +15,6 @@ console.log("Hola desde npm")
 const express = require('express');
 const app = express();   //esto crea el servidor
 
-//-----------------------------------------------------------
-//geters y setters
-//configura ejs
-
-app.set("view engine", "ejs");
-app.set("views", "views");
-
-//todo lo que pongammos con % se eecuta en el servidor
-//response render compila el archivo ejs
-
-//---------------------------------------------------------
-//carpeta estatica
-
-const path = require("path");
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-
 //----------------------------------------------------------
 //body parser
 
@@ -105,11 +87,8 @@ app.use("/lab11", hotcakesRutas);
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
-
-    response.status(404)
-
     //Manda la respuesta
-    response.send('¡Lo sentimos, ya no hay hot cakes :('); 
+    response.send('¡Hola mundo!'); 
   
 });
 

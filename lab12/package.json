@@ -1,5 +1,5 @@
 {
-  "name": "lab11",
+  "name": "lab12",
   "version": "1.0.0",
   "description": "Ejercicio clase",
   "main": "app.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OlimpiaGarcia/Construccion_Software_LabsTC2005B/tree/main/lab11"
+    "url": "git+https://github.com/OlimpiaGarcia/Construccion_Software_LabsTC2005B/tree/main/lab12"
   },
   "author": "Olimpia Garcia",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2"
   }
 }
