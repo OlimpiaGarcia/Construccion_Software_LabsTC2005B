@@ -5,7 +5,7 @@
 //no enviar node con git ignore
 //npm install express = instalar framework express
 
-console.log("Hola desde nodemon")
+//console.log("Hola desde nodemon")
 console.log("Hola desde npm")
 
 //--------------------------------------------------------
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //body parser
 
 const bodyParser = require('body-parser');
-const { request, response } = require('express');
+//const { request, response } = require('express');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -88,6 +88,7 @@ app.use('/ruta', (request, response, next) => {
 ///------------------------------------------------------------------
 
 */
+//midleware
 
 app.use((request, response, next) => {
     console.log('Middleware!');
@@ -99,7 +100,7 @@ app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
 
-const hotcakesRutas = require("./routes/hotcakes.routes");
+const hotcakesRutas = require("./routes/hot_cakes.routes");
 
 app.use("/lab12", hotcakesRutas);
 
@@ -110,7 +111,7 @@ app.use((request, response, next) => {
     response.status(404)
 
     //Manda la respuesta
-    response.send('¡Lo sentimos, ya no hay hot cakes :('); 
+    response.send('404 ¡Lo sentimos, ya no hay hot cakes :('); 
   
 });
 

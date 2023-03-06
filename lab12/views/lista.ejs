@@ -1,8 +1,10 @@
 <%- include ("includes/head.ejs") %>
 
 <!-- <main class="container"> -->
+
       
   <% if (hot_cakes.lenght > 0) { %>
+    <p> pasa el if </p>
       <div class="columns is-multiline">
         <% for (let hot_cake of hot_cakes) { %>
           <div class="column is-3">
@@ -42,7 +44,7 @@
     <% 
     } else 
       { %>
-        <h1>No hay hot cakes >:( </h1> 
+        <h1>404 No hay hot cakes >:( no paso el if </h1> 
         <% 
   }%>   
 

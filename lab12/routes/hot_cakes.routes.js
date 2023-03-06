@@ -3,25 +3,22 @@
 //const { request, response } = require('express');
 const express = require('express');
 const path = require("path");
-
-const hot_cakes1 = [
-    "belgas",
-    "avena",
-    "japoneses",
-    "chocolates",
-    "salados",
-    "americanos",
-    "platanos",
-    "minis"
-];
-
 const router = express.Router();
-router.get("/lista1", (request, response, next)=> 
-{
-    response.render("lista1", {hot_cakes: hot_cakes1});
-})
 
-const hot_cakes2 = [
+
+// const hot_cakes = [
+//     "belgas",
+//     "avena",
+//     "japoneses",
+//     "chocolates",
+//     "salados",
+//     "americanos",
+//     "platanos",
+//     "minis"
+// ];
+
+
+const hot_cakes = [
     {
         nombre: "belgas",
         imagen: "https://t1.uc.ltmcdn.com/es/posts/8/9/7/como_hacer_waffles_con_harina_de_hot_cakes_50798_paso_5_600.jpg",
@@ -88,8 +85,9 @@ const hot_cakes2 = [
     },
 ];
 
-router.get('/lista2', (request, response, next) => {
-    response.render('lista', {hot_cakes: hot_cakes2});
+router.get('/lista', (request, response, next) => {
+    response.render('lista', {hot_cakes: hot_cakes});
+    console.log("sale") //aqui fala
 });
 
 //app.use("/pedir", (request, response, next) =>  esto funciona para post y get
@@ -115,7 +113,7 @@ router.get("/pedir", (request, response, next) =>
 
                 <h1>Hot cakes</h1>
 
-                    <form action="/lab11/pedir" method="POST">
+                    <form action="/lab12/pedir" method="POST">
 
                     <fieldset>
 
@@ -165,11 +163,22 @@ router.post("/pedir", (request, response, next) =>
 {
     console.log(request.body);
 
-    response.send("Pediste " + request.body.hot_cakes + "  hot cakes")
+    const texto = request.body.hot_cakes;
+
+    response.send("Pediste " + texto + "  hot cakes")
+
+    const respuesta = "pediste " + texto +" hot cakes "
+    
+    //aqui debe ir lo del txt
+    const filesystem = require("fs");
+    filesystem.writeFileSync('pediste.txt',respuesta) 
+    
+    const preguntalab = "¿Qué otros templating engines existen para node? Pug, Underscore, mustache.js, Jade, Nunjucks , doT , Squirrelly, Handlebars.js" + "Ta, T. (2021, 20 agosto). Node.js templating engine: Top 10 best every developer must know. Blogs | AHT Tech | Digital Commerce Experience Company. https://blog.arrowhitech.com/node-js-templating-engine-top-10-best-every-developer-must-know/"  
+    filesystem.writeFileSync('Preguntas.txt', preguntalab)
+
 })
 
-router.get("/pedido", (request, response, next) =>
-{
+router.get('/pedido', (request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 });
 
