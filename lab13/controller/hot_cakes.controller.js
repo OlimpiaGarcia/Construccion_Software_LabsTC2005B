@@ -50,7 +50,7 @@ exports.get_pedir = (request, response, next) =>
 
                 <h1>Hot cakes</h1>
 
-                    <form action="/lab12/pedir" method="POST">
+                    <form action="/lab13/pedir" method="POST">
 
                     <fieldset>
 
