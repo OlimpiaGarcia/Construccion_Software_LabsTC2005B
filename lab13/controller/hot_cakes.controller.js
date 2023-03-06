@@ -1,8 +1,31 @@
+const { request } = require("express");
+const HotCakes = require("../models/hot_cakes.model");
 const Hot_Cake = require("../models/hot_cakes.model")
 
 exports.get_lista = (request, response, next) => 
 {
-    response.render("lista", {hot_cakes: hot_cakes});
+    response.render("lista", {hot_cakes: HotCakes.fetchAll()});
+}
+
+exports.get_nuevo = (request, response, next) => 
+{
+    response.render("nuevo")
+}
+
+exports.post_nuevo = (request, response, next) => 
+{
+    const hot_cake = new HotCakes
+    ({
+        nombre: request.body.nombre,
+        descripcion: request.body.descripcion,
+        handle: request.body.handle,
+        ingredientes: request.body.ingredientes,
+        precio: request.body.precio
+    })
+
+    hot_cake.save();
+
+    response.status(300).redirect("/lab13/lista")
 }
 
 exports.get_pedir = (request, response, next) => 
@@ -82,7 +105,6 @@ exports.post_pedir = ((request, response, next) =>
     response.send("Pediste " + texto + "  hot cakes")
 
     const respuesta = "pediste " + texto +" hot cakes "
-    
 
 })
 

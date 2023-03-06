@@ -17,15 +17,19 @@ const router = express.Router();
 //     "minis"
 // ];
 
-const hot_cakesController = require("../controller/hot_cakes.controller.js");
+const hot_cakesController = require("../controller/hot_cakes.controller");
 
 router.get('/lista', hot_cakesController.get_lista);
 
-router.get("get", hot_cakesController.get_pedir);
+router.get("/nuevo", hot_cakesController.get_nuevo);
+
+router.post("/nuevo", hot_cakesController.post_nuevo);
+
+router.get("/pedir", hot_cakesController.get_pedir);
 
 router.post("/pedir", hot_cakesController.post_pedir);
 
-router.get('/pedido', hot_cakesController.get_pedido)
+router.get('/pedido', hot_cakesController.get_pedido);
 
 
 module.exports = router; //exportar la ruta
