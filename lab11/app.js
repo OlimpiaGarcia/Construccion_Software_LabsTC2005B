@@ -112,7 +112,7 @@ app.use((request, response, next) => {
     response.status(404)
 
     //Manda la respuesta
-    response.send('¡Lo sentimos, ya no hay hot cakes :('); 
+    response.send('¡404 no existe! :('); 
   
 });
 
