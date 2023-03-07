@@ -4,9 +4,14 @@ const Hot_Cake = require("../models/hot_cakes.model")
 
 exports.get_lista = (request, response, next) => 
 {
-    console.log(request.get ("Cookie"));
+    let cookies= request.get("Cookie") || "" ;
+    
+    let consultas = cookies.split("=") [1] || [0];
 
-    response.setHeader('Set-Cookie', 'hot_cakes = valor_cookie');
+    consultas++;
+
+    //crea una coockie
+    response.setHeader('Set-Cookie', 'consultas = 0');
 
     response.render("lista", {hot_cakes: HotCakes.fetchAll()});
 }
