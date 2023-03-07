@@ -4,6 +4,7 @@ const Hot_Cake = require("../models/hot_cakes.model")
 
 exports.get_lista = (request, response, next) => 
 {
+    //anañade coockies
     let cookies= request.get("Cookie") || "" ;
     
     let consultas = cookies.split("=") [1] || [0];
@@ -11,7 +12,7 @@ exports.get_lista = (request, response, next) =>
     consultas++;
 
     //crea una coockie
-    response.setHeader('Set-Cookie', 'consultas = 0');
+    response.setHeader('Set-Cookie', 'consultas=' + consultas );
 
     response.render("lista", {hot_cakes: HotCakes.fetchAll()});
 }
@@ -34,7 +35,7 @@ exports.post_nuevo = (request, response, next) =>
 
     hot_cake.save();
 
-    response.status(300).redirect("/lab13/lista")
+    response.status(300).redirect("/lab14/lista")
 }
 
 exports.get_pedir = (request, response, next) => 
@@ -59,7 +60,7 @@ exports.get_pedir = (request, response, next) =>
 
                 <h1>Hot cakes</h1>
 
-                    <form action="/lab13/pedir" method="POST">
+                    <form action="/lab14/pedir" method="POST">
 
                     <fieldset>
 
