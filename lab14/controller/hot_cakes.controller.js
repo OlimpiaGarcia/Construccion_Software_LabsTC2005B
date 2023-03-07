@@ -12,9 +12,13 @@ exports.get_lista = (request, response, next) =>
     consultas++;
 
     //crea una coockie
-    response.setHeader('Set-Cookie', 'consultas=' + consultas );
+    response.setHeader('Set-Cookie', 'consultas=' + consultas + "; HttpOnly");
 
-    response.render("lista", {hot_cakes: HotCakes.fetchAll()});
+    response.render("lista", 
+    {
+        hot_cakes: HotCakes.fetchAll(),
+        ultimo_hot_cake: request.session.ultimo_hot_cake || "",
+    });
 }
 
 exports.get_nuevo = (request, response, next) => 
@@ -34,6 +38,8 @@ exports.post_nuevo = (request, response, next) =>
     })
 
     hot_cake.save();
+
+    request.session.ultimo_hot_cake = hot_cake.nombre;
 
     response.status(300).redirect("/lab14/lista")
 }

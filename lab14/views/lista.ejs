@@ -47,7 +47,15 @@
     } else 
       { %>
         <h1>404 No hay hot cakes >:( no paso el if </h1> 
-        <% }%>   
+
+        <br><br>
+
+        <% if (ultimo_hot_cake != "")
+        { %>
+          <div class="notification is-info">
+            El ultimo hot cake registrado fue <%= ultimo_hot_cake %>
+          </div>
+          <% } %>   
 
 <a href = "/lab14/nuevo" class="button is-link is-light">Registrar</a>
   <%- include('includes/foot.ejs') %>

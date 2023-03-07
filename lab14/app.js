@@ -49,7 +49,20 @@ app.use('/alguna-ruta', (request, response, next) => {
 */
 
 //--------------------------------------------------------
+//Para preparar el entorno para trabajar con sesiones, agregamos como middleware el manejo de sesiones: 
 
+
+const session = require('express-session');
+
+app.use(session({
+    secret: 'mi string secreto que debe ser un string aleatorio muy largo, no como éste', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
+
+
+//--------------------------------------------------------
 
 /*middleware paso a paso
 
@@ -99,6 +112,10 @@ app.use((request, response, next) => {
 app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
+
+const usersRoutes = require("./routes/users.routes");
+
+app.use("/users", usersRoutes);
 
 const hotcakesRutas = require("./routes/hot_cakes.routes");
 
