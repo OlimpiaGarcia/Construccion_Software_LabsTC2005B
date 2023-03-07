@@ -4,6 +4,8 @@ const Hot_Cake = require("../models/hot_cakes.model")
 
 exports.get_lista = (request, response, next) => 
 {
+    console.log(request.get ("Cookie"));
+
     response.setHeader('Set-Cookie', 'hot_cakes = valor_cookie');
 
     response.render("lista", {hot_cakes: HotCakes.fetchAll()});
