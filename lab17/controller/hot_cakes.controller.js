@@ -14,11 +14,23 @@ exports.get_lista = (request, response, next) =>
     //crea una coockie
     response.setHeader('Set-Cookie', 'consultas=' + consultas + "; HttpOnly");
 
-    response.render("lista", 
-    {
-        hot_cakes: HotCakes.fetchAll(),
-        ultimo_hot_cake: request.session.ultimo_hot_cake || "",
+    HotCakes.fetchAll()
+    .then(([rows, fieldData]) => { //si se cumple la promesa, hace esto
+        console.log(rows);
+        //console.log(fieldData)
+
+        response.render("lista",
+        {
+            hot_cakes: rows,
+            ultimo_hot_cake: request.session.ultimo_hot_cake
+
+        })
+
+    })
+    .catch(error => {   //si no se cumple la promesa, hace esto
+        console.log(error);
     });
+
 }
 
 exports.get_nuevo = (request, response, next) => 

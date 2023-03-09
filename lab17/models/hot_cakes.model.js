@@ -91,15 +91,7 @@ module.exports = class HotCakes
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     static fetchAll() 
     {
-        db.execute('SELECT * FROM hotcakes') //promesa
-        .then(([rows, fieldData]) => { //si se cumple la promesa, hace esto
-            console.log(rows);
-            //console.log(fieldData)
-        })
-        .catch(error => {   //si no se cumple la promesa, hace esto
-            console.log(error);
-        });
-        return hot_cakes
+        return db.execute('SELECT * FROM hotcakes') //promesa
         
     }
 
