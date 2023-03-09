@@ -14,23 +14,27 @@ exports.get_lista = (request, response, next) =>
     //crea una coockie
     response.setHeader('Set-Cookie', 'consultas=' + consultas + "; HttpOnly");
 
-    HotCakes.fetchAll()
-    .then(([rows, fieldData]) => { //si se cumple la promesa, hace esto
-        console.log(rows);
-        //console.log(fieldData)
+    //
+    const id = request.params.id || 0;
+        HotCakes.fetch(id)
+        .then(([rows, fieldData]) => { //si se cumple la promesa, hace esto
+            console.log(rows);
+            //console.log(fieldData)
 
-        response.render("lista",
-        {
-            hot_cakes: rows,
-            ultimo_hot_cake: request.session.ultimo_hot_cake
+            response.render("lista",
+            {
+                hot_cakes: rows,
+                ultimo_hot_cake: request.session.ultimo_hot_cake || '',
+
+            })
 
         })
+        .catch(error => {   //si no se cumple la promesa, hace esto
+            console.log(error);
+        });
 
-    })
-    .catch(error => {   //si no se cumple la promesa, hace esto
-        console.log(error);
-    });
-
+    
+    
 }
 
 exports.get_nuevo = (request, response, next) => 
@@ -49,11 +53,16 @@ exports.post_nuevo = (request, response, next) =>
         precio: request.body.precio
     })
 
-    hot_cake.save();
+    hot_cake.save()
+    .then(([rows, fieldData]) => 
+    {
+        request.session.ultimo_hot_cake = hot_cake.nombre;
 
-    request.session.ultimo_hot_cake = hot_cake.nombre;
+        response.status(300).redirect("/lab17/lista")
+    })
+    .catch(error => console.log (error));
 
-    response.status(300).redirect("/lab17/lista")
+    
 }
 
 exports.get_pedir = (request, response, next) => 

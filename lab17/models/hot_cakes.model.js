@@ -1,6 +1,6 @@
 const db = require("../util/database"); //conecxion a la base de datos
 
-
+/*
 const hot_cakes = [
     {
         nombre: "belgas",
@@ -67,7 +67,7 @@ const hot_cakes = [
         precio: "80",
     },
 ];
-
+*/
 
 
 module.exports = class HotCakes 
@@ -77,6 +77,7 @@ module.exports = class HotCakes
     constructor(mi_hot_cake) {
         this.nombre = mi_hot_cake.nombre || "Belgas";
         this.imagen = mi_hot_cake.imagen || "https://bulma.io/images/placeholders/1280x960.png";
+        this.descripcion = mi_hot_cake.descripcion || "una descripcion"
         this.handle = mi_hot_cake.handle ||"Un delicioso Hot_cake";
         this.ingredientes = mi_hot_cake.ingredientes || "mantequilla, harina, huevo, leche";
         this.precio = mi_hot_cake.precio || "150";
@@ -85,14 +86,25 @@ module.exports = class HotCakes
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() 
     {
-        hot_cakes.push(this);   
+        return db.execute(
+            `INSERT INTO hotcakes (nombre, imagen, descripcion, handle, precio) 
+            VALUES (?, ?, ?, ?, ?)`,
+            [this.nombre, this.imagen, this.descripcion, this.handle, this.precio]
+
+        );
+    
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.
-    static fetchAll() 
+    static fetch(id) 
     {
-        return db.execute('SELECT * FROM hotcakes') //promesa
-        
+        let query = `SELECT * FROM hotcakes`;
+        if (id != 0  )
+        {
+            query += ' WHERE id = ?'
+            return db.execute( query, [id])
+        }
+        return db.execute( query) //promesa
     }
 
 }
