@@ -119,7 +119,7 @@ app.use("/users", usersRoutes);
 
 const hotcakesRutas = require("./routes/hot_cakes.routes");
 
-app.use("/lab14", hotcakesRutas);
+app.use("/lab17", hotcakesRutas);
 
 
 app.use((request, response, next) => {

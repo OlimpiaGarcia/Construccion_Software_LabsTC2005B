@@ -41,7 +41,7 @@ exports.post_nuevo = (request, response, next) =>
 
     request.session.ultimo_hot_cake = hot_cake.nombre;
 
-    response.status(300).redirect("/lab14/lista")
+    response.status(300).redirect("/lab17/lista")
 }
 
 exports.get_pedir = (request, response, next) => 
@@ -66,7 +66,7 @@ exports.get_pedir = (request, response, next) =>
 
                 <h1>Hot cakes</h1>
 
-                    <form action="/lab14/pedir" method="POST">
+                    <form action="/lab17/pedir" method="POST">
 
                     <fieldset>
 
