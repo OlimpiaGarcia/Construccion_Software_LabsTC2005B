@@ -58,7 +58,7 @@ exports.post_nuevo = (request, response, next) =>
     {
         request.session.ultimo_hot_cake = hot_cake.nombre;
 
-        response.status(300).redirect("/lab17/lista")
+        response.status(300).redirect("/lab18/lista")
     })
     .catch(error => console.log (error));
 
@@ -87,7 +87,7 @@ exports.get_pedir = (request, response, next) =>
 
                 <h1>Hot cakes</h1>
 
-                    <form action="/lab17/pedir" method="POST">
+                    <form action="/lab18/pedir" method="POST">
 
                     <fieldset>
 
