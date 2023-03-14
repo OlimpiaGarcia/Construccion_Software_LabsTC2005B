@@ -27,7 +27,26 @@ exports.post_login = (request, response, next) => {
                 if (doMatch) {
                     request.session.isLoggedIn = true;
                     request.session.nombre = rows[0].nombre;
-                    response.redirect('/lab18/lista');
+                    User.getPrivilegios(rows[0].username)
+                    .then(([consulta_privilegios, fieldData]) => {
+                        console.log(consulta_privilegios);
+
+                        const privilegios = [];
+
+                        for (let privilegio of consulta_privilegios) {
+                            privilegios.push(privilegio.nombre);
+                        }
+
+                        console.log(privilegios);
+
+                        request.session.privilegios = privilegios;
+
+                        return request.session.save(err => {
+                            response.redirect('/lab18/lista');
+                        });
+                    })
+                    .catch((error) => {console.log(error)});
+                    
                 } else {
                     request.session.mensaje = 'El usuario y/o contraseña no coinciden';
                     response.redirect('/users/login');
@@ -41,6 +60,7 @@ exports.post_login = (request, response, next) => {
     })
     .catch((error) => {console.log(error)});
 }
+
 
 exports.get_signup = (request, response, next) => {
     response.render('signup', {
