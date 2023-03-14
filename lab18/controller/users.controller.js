@@ -1,4 +1,4 @@
-const User = require('../models/users.model');
+const User = require('../models/users.models');
 const bcrypt = require('bcryptjs')
 
 exports.get_login = (request, response, next) => {
@@ -27,7 +27,7 @@ exports.post_login = (request, response, next) => {
                 if (doMatch) {
                     request.session.isLoggedIn = true;
                     request.session.nombre = rows[0].nombre;
-                    response.redirect('/hot_cakes/lista');
+                    response.redirect('/lab18/lista');
                 } else {
                     request.session.mensaje = 'El usuario y/o contraseña no coinciden';
                     response.redirect('/users/login');

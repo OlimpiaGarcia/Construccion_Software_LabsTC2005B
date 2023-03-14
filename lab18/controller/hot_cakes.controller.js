@@ -59,7 +59,7 @@ exports.post_nuevo = (request, response, next) => {
     .then(([rows, fieldData]) => {
         request.session.ultimo_hot_cake = hot_cake.nombre;
 
-        response.status(300).redirect('/hot_cakes/lista');
+        response.status(300).redirect('/lab18/lista');
     })
     .catch(error => console.log(error));
 

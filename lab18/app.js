@@ -127,13 +127,13 @@ app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
 
-const rutasUsers = require('./routes/users.routes');
+const usersRoutes = require('./routes/users.routes');
 
-app.use('/users', rutasUsers);
+app.use('/users', usersRoutes);
 
 const hotcakesRutas = require('./routes/hot_cakes.routes');
 
-app.use('/hot_cakes', isAuth, hotcakesRutas);
+app.use('/lab18', isAuth, hotcakesRutas);
 
 
 app.use((request, response, next) => {
