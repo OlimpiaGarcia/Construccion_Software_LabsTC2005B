@@ -3,7 +3,7 @@ const path = require('path');
 
 const router = express.Router();
 
-const usersController = require('../controllers/users.controller');
+const usersController = require('../controller/users.controller');
 
 router.get('/login', usersController.get_login);
 

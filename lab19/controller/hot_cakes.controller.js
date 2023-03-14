@@ -25,8 +25,11 @@ exports.get_lista = (request, response, next) =>
             {
                 hot_cakes: rows,
                 ultimo_hot_cake: request.session.ultimo_hot_cake || '',
+                isLoggedIn: request.session.isLoggedIn || false,
+                nombre: request.session.nombre || '',
+                privilegios: request.session.privilegios || [],
 
-            })
+            });
 
         })
         .catch(error => {   //si no se cumple la promesa, hace esto
