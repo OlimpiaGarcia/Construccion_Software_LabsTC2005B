@@ -1,6 +1,6 @@
 const { request } = require("express");
 const HotCakes = require("../models/hot_cakes.model");
-const Hot_Cake = require("../models/hot_cakes.model")
+
 
 exports.get_lista = (request, response, next) => 
 {
@@ -50,7 +50,7 @@ exports.get_nuevo = (request, response, next) => {
 
 exports.post_nuevo = (request, response, next) => {
 
-    const hot_cake = new HotCake({
+    const hot_cake = new HotCakes({
         nombre: request.body.nombre,
         descripcion: request.body.descripcion,
         handle: request.body.handle,

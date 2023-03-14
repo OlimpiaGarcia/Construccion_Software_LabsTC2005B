@@ -2,9 +2,9 @@
 
 <h1 class="title">Menú</h1>
 
-<% if(privilegios.indexOf('crear_hotcakes') >= 0){
+<% if(privilegios.indexOf('crear_hotcakes') >= 0){ %>
   <a href = "/lab18/nuevo" class="button is-link is-light">Registrar</a>
-} %>
+<% } %>
 
 <br><br>
       
@@ -60,9 +60,9 @@
           </div>
           <% } %>   
 
-          <% if(privilegios.indexOf('crear_hotcakes') >= 0){
+          <% if(privilegios.indexOf('crear_hotcakes') >= 0){ %>
   <a href = "/lab18/nuevo" class="button is-link is-light">Registrar</a>
-} %>
+<% } %>
 
   <%- include('includes/foot.ejs') %>
 
