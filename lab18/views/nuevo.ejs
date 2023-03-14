@@ -1,13 +1,15 @@
-<%- include ("includes/head.ejs") %>
+<%- include('includes/head.ejs') %>
 
-<h1 class = "title"> Registrar Hot Cake</h1>
+<h1 class="title">Registrar hot cake</h1>
 
 <br><br>
 
-<form action = "/lab18/nuevo" method="POST">
+<form action="/hot_cakes/nuevo" method="POST">
 
-    <label for = "nombre">Nombre: </label>
-    <input name = "nombre" class = "input is is-rounded" type="text" placeholder="belgas">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
+    <label for="nombre">Nombre:</label>
+    <input required name="nombre" id="nombre" class="input is-rounded" type="text" placeholder="Belgas">
 
     <label for="descripcion">Descripcion:</label>
     <input name="descripcion" id="descripcion" class="input is-rounded" type="text" placeholder="Deliciosos hot cakes">
@@ -26,6 +28,8 @@
     <input class="button is-info is-rounded" type="submit" value="Registrar">
 
 </form>
+
+<%- include('includes/foot.ejs') %>
 
 
 <%- include ("includes/foot.ejs") %>

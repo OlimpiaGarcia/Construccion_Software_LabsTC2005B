@@ -1,9 +1,18 @@
 const express = require('express');
-const path = require("path");
+const path = require('path');
+
 const router = express.Router();
 
-const userscontroller = require("../controller/users.controller");
+const usersController = require('../controllers/users.controller');
 
-router.get("/logout", userscontroller.logout)
+router.get('/login', usersController.get_login);
 
-module.exports = router; //exportar la ruta
+router.post('/login', usersController.post_login);
+
+router.get('/signup', usersController.get_signup);
+
+router.post('/signup', usersController.post_signup);
+
+router.get('/logout', usersController.logout);
+
+module.exports = router;

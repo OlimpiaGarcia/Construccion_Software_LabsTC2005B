@@ -48,6 +48,14 @@ app.use('/alguna-ruta', (request, response, next) => {
 });
 */
 
+///---------------------------------------------------------------------------------
+
+//esto es para cifrar
+
+const csrf = require('csurf');
+const isAuth = require('./util/is-auth');
+
+
 //--------------------------------------------------------
 //Para preparar el entorno para trabajar con sesiones, agregamos como middleware el manejo de sesiones: 
 
@@ -60,6 +68,12 @@ app.use(session({
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
+//--------------------------------------------------------------
+
+//usar la encriptacion
+
+const csrfProtection = csrf();
+app.use(csrfProtection); 
 
 
 //--------------------------------------------------------
@@ -113,13 +127,13 @@ app.use('/home', (request, response, next) => {
     response.send('bienvenido a casa'); 
 });
 
-const usersRoutes = require("./routes/users.routes");
+const rutasUsers = require('./routes/users.routes');
 
-app.use("/users", usersRoutes);
+app.use('/users', rutasUsers);
 
-const hotcakesRutas = require("./routes/hot_cakes.routes");
+const hotcakesRutas = require('./routes/hot_cakes.routes');
 
-app.use("/lab18", hotcakesRutas);
+app.use('/hot_cakes', isAuth, hotcakesRutas);
 
 
 app.use((request, response, next) => {

@@ -37,34 +37,33 @@ exports.get_lista = (request, response, next) =>
     
 }
 
-exports.get_nuevo = (request, response, next) => 
-{
-    response.render("nuevo")
-}
+exports.get_nuevo = (request, response, next) => {
+    response.render('nuevo', {
+        isLoggedIn: request.session.isLoggedIn || false,
+        nombre: request.session.nombre || '',
+        csrfToken: request.csrfToken(), 
+    });
+};
 
-exports.post_nuevo = (request, response, next) => 
-{
-    const hot_cake = new HotCakes
-    ({
+exports.post_nuevo = (request, response, next) => {
+
+    const hot_cake = new HotCake({
         nombre: request.body.nombre,
         descripcion: request.body.descripcion,
         handle: request.body.handle,
         ingredientes: request.body.ingredientes,
-        precio: request.body.precio
-    })
+        precio: request.body.precio,
+    });
 
     hot_cake.save()
-    .then(([rows, fieldData]) => 
-    {
+    .then(([rows, fieldData]) => {
         request.session.ultimo_hot_cake = hot_cake.nombre;
 
-        response.status(300).redirect("/lab18/lista")
+        response.status(300).redirect('/hot_cakes/lista');
     })
-    .catch(error => console.log (error));
+    .catch(error => console.log(error));
 
-    
-}
-
+};
 exports.get_pedir = (request, response, next) => 
 {
 
