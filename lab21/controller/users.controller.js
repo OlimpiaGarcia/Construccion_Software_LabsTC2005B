@@ -1,4 +1,4 @@
-const User = require('../models/users.models');
+const User = require('../models/users.model');
 const bcrypt = require('bcryptjs')
 
 exports.get_login = (request, response, next) => {
@@ -42,7 +42,7 @@ exports.post_login = (request, response, next) => {
                         request.session.privilegios = privilegios;
 
                         return request.session.save(err => {
-                            response.redirect('/lab18/lista');
+                            response.redirect('/hot_cakes/lista');
                         });
                     })
                     .catch((error) => {console.log(error)});
@@ -60,7 +60,6 @@ exports.post_login = (request, response, next) => {
     })
     .catch((error) => {console.log(error)});
 }
-
 
 exports.get_signup = (request, response, next) => {
     response.render('signup', {

@@ -38,4 +38,5 @@ module.exports = class User {
                 AND rp.idRol = r.id AND rp.idPrivilegio = p.id
         `, [username]);
     }
+
 }
